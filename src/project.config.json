@@ -1,0 +1,22 @@
+{
+  "projectname": "{{name}}",
+  "description": "项目配置文件。",
+  "appid": "{{appId}}",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "libVersion": "2.4.0",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "nodeModules": true
+  },
+  "scripts": {
+    "beforeCompile": "",
+    "beforePreview": "",
+    "beforeUpload": ""
+  },
+  "condition": {}
+}

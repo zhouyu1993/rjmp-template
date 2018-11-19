@@ -1,0 +1,41 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "keywords": [
+    "wx-miniprogram",
+    "wx-miniapp"
+  ],
+  "author": "{{author}}",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://"
+  },
+  "bugs": {
+    "url": "",
+    "email": ""
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "gulp",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production gulp",
+    "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf"
+  },
+  "dependencies": {
+    "query-string": "^5.1.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "ie >= 9",
+    "ios >= 8",
+    "android >= 4.2"
+  ]
+}
