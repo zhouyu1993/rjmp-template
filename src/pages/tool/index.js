@@ -59,7 +59,7 @@ Page({
   },
   onShareAppMessage (options) {
     return {
-      title: '{{name}}',
+      title: '小工具',
       path: '/pages/tool/index',
       success: res => {
         wx.showToast({

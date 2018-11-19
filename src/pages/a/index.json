@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#ff397e",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "{{name}}-a",
+  "navigationBarTitleText": "a",
   "backgroundColor": "#eee",
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": false,

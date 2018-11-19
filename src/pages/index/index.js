@@ -16,7 +16,7 @@ Page({
   },
   onShareAppMessage (options) {
     return {
-      title: '{{name}}',
+      title: '音乐库',
       path: '/pages/index/index',
       success: res => {
         wx.showToast({

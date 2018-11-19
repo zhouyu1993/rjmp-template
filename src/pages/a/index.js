@@ -14,7 +14,7 @@ create(store, {
   },
   onShareAppMessage (options) {
     return {
-      title: '{{name}}',
+      title: 'a',
       path: '/pages/a/index',
       success: res => {
         wx.showToast({
