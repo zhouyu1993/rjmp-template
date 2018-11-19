@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#ff397e",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "{{{name}}}-音乐库",
+  "navigationBarTitleText": "{{name}}-音乐库",
   "backgroundColor": "#eee",
   "backgroundTextStyle": "dark",
   "enablePullDownRefresh": false,

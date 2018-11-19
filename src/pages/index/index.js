@@ -16,7 +16,7 @@ Page({
   },
   onShareAppMessage (options) {
     return {
-      title: '{{{name}}}',
+      title: '{{name}}',
       path: '/pages/index/index',
       success: res => {
         wx.showToast({
