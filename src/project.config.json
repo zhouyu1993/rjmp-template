@@ -1,5 +1,5 @@
 {
-  "projectname": "{{name}}",
+  "projectname": "{{{name}}}",
   "description": "项目配置文件。",
   "appid": "{{app_id}}",
   "miniprogramRoot": "./",

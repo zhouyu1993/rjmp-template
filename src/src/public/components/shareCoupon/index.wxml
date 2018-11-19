@@ -1,4 +1,0 @@
-<block>
-  <share show="{{show && shareData}}" data="{{shareData}}" bind:draw="onDraw" bind:share="onShare" bind:close="onClose" wrapper-class="{{wrapperClass}}"
-  />
-</block>

@@ -1,16 +1,16 @@
 {
-  "name": "{{name}}",
+  "name": "{{{name}}}",
   "version": "1.0.0",
-  "description": "{{description}}",
+  "description": "{{{description}}}",
   "keywords": [
     "wx-miniprogram",
     "wx-miniapp"
   ],
-  "author": "{{author}}",
+  "author": "{{{author}}}",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:{{author}}/{{name}}.git"
+    "url": "git+ssh://"
   },
   "bugs": {
     "url": "",

@@ -59,7 +59,7 @@ Page({
   },
   onShareAppMessage (options) {
     return {
-      title: 'kf-mp2',
+      title: '{{{name}}}',
       path: '/pages/tool/index',
       success: res => {
         wx.showToast({

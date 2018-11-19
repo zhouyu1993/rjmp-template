@@ -1,9 +1,0 @@
-<block wx:if="{{success!==null}}">
-  <icon type="{{success?'success':'cancel'}}" size="100" color="#ff397e"></icon>
-  <view>{{tip}}</view>
-  <view class="btns">
-    <navigator url="/sub-pages/pages/order-list/index">查看订单</navigator>
-    <navigator wx:if="{{success}}" url="/pages/mall-index/index" open-type="switchTab">随便逛逛</navigator>
-    <navigator wx:else url="/sub-pages/pages/cashier/cashier?orderid={{orderid}}&partnerid={{partnerid}}">重新支付</navigator>
-  </view>
-</block>

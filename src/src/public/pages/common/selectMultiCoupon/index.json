@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "选择优惠券",
-  "usingComponents": {
-    "empty": "../../../components/emptyCoupon/index",
-    "coupon": "../../../components/coupon/index",
-    "tab": "../../../components/tab/index"
-  }
-}

@@ -1,6 +1,6 @@
-# {{name}}
+# {{{name}}}
 
-{{description}}
+{{{description}}}
 
 ## src 目录结构
 

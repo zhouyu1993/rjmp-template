@@ -13,7 +13,7 @@ create(store, {
   },
   onShareAppMessage (options) {
     return {
-      title: 'kf-mp2',
+      title: '{{{name}}}',
       path: '/pages/a/index',
       success: res => {
         wx.showToast({
