@@ -24,9 +24,37 @@
     "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf"
   },
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "js-base64": "^2.4.9",
     "query-string": "^5.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "buffer": "^5.2.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^5.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "mkdirp": "^0.5.1",
+    "through2": "^3.0.0",
+    "uglify-js": "^3.4.9"
+  },
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
