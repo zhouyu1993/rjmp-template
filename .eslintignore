@@ -1,0 +1,14 @@
+# https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+
+# production
+/dist/
+
+# development
+/src/lib
+/src/npm
+/src/projects
+
+# dependencies
+node_modules
+
+# other

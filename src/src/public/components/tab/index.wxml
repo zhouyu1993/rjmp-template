@@ -1,0 +1,8 @@
+<view class="tab wrapper-class">
+  <view class="item-class" wx:for="{{tabs}}" wx:key="{{index}}">
+    <view data-index="{{index}}" bindtap="handleTabChange" class="{{tabIndex==index?'currentTab':''}}">{{item.name}}
+      <text wx:if="{{item.num>0}}">({{item.num}})</text>
+    </view>
+  </view>
+</view>
+<slot></slot>

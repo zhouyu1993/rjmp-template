@@ -1,0 +1,3 @@
+<navigator hover-class="none" url="/pages/playing/index" class="icon-playing my-class">
+  <image src="../../assets/img/icon_playing.gif" />
+</navigator>

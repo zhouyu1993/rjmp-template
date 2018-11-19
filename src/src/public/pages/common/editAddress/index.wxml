@@ -1,0 +1,49 @@
+<import src="../templates/toast.wxml" />
+<view class="addAddress" bindtap="bindHideRegion">
+  <view class="form">
+    <view>
+      <label>收货人</label>
+      <input id="name" placeholder="姓名" maxlength="10" data-id="name" value="{{currentAddress.name}}" bindinput="bindInputChange" />
+      <icon id="name" style="visibility:{{currentAddress.name == '' ? 'hidden': 'visible'}}" class="clear" type="clear" size="15" bindtap="bindClearTap"/>
+    </view>
+    <view>
+      <label>手机号码</label>
+      <input id="mobile" placeholder="手机号" maxlength="11" data-id="mobile" value="{{currentAddress.mobile}}" bindinput="bindInputChange" />
+      <icon id="mobile" style="visibility:{{currentAddress.mobile == '' ? 'hidden': 'visible'}}" class="clear" type="clear" size="15" bindtap="bindClearTap"/>
+    </view>
+    <view bindtap="bindShowRegion">
+      <label>所在地</label>
+      <input disabled placeholder="请选择省市区" data-id="region" value="{{pro}}{{city}}{{area}}" />
+    </view>
+    <view id="addAddressDetail">
+      <label>详细地址</label>
+      <input id="address" maxlength="30" auto-height="{{true}}" data-id="address" placeholder="请输入详细地址" value="{{currentAddress.address}}" bindinput="bindInputChange" />
+      <icon id="address" style="visibility:{{currentAddress.address == '' ? 'hidden': 'visible'}}" class="clear" type="clear" size="15" bindtap="bindClearTap"/>
+    </view>
+    <view class="defaultAddress">
+      <label>默认地址</label>
+      <input placeholder="设为默认地址" disabled />
+      <switch class="isDefaultAddress" checked="{{currentAddress.property == 1 ? true : false}}" data-id="property" bindchange="bindInputChange" />
+    </view>
+  </view>
+  <button class="save {{canSave ? '' : 'disableButton' }}" bindtap="bindSave">保存</button>
+  <button class="save deleteAddress" bindtap="bindDelete" style="display: {{addrid > -1 ? 'block': 'none'}}">删除地址</button>
+</view>
+<view wx:if="{{isShowRegion}}" class="citypicker">
+  <view class="cityheader">
+    <view bindtap="bindHideRegion" class="city-cancel">取消</view>
+    <view bindtap="bindConfirmRegion" class="city-true">确定</view>
+  </view>
+  <picker-view indicator-style="height: 40rpx;" value="{{value}}" bindchange="bindPickerChange" class="citybody">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 30px;padding-left:10px;">{{item.v}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 30px;padding-left:10px;">{{item.v}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 30px;padding-left:10px;">{{item.v}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<template is="toast" data="{{toast}}"/>

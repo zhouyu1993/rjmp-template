@@ -1,0 +1,19 @@
+<view class="text" wx:if="{{text.length > 0 && data.length > 0}}">{{text}}</view>
+<view class="item itemSelectedStatus" wx:for="{{data}}" wx:key="{{index}}" bindtap="bindSelectCoupon" data-index="{{index}}">
+  <image wx:if="{{canSelect}}" src="{{item.Selected ? selectedStatusImg : unSelectedStatusImg }}" />
+  <view class="itemTop">
+    <view class="itemTopLeft">
+      <view class="price {{opacity3}} {{item.fontSize}} {{tabIndex == 0 ? 'offlineCouponColor' : 'commonCouponColor'}}">
+        <text class="priceSign" wx:if="{{item.c_amt>0}}">¥</text>{{item.c_amt}}</view>
+      <text class="des {{opacity3}}">{{item.desc}}</text>
+    </view>
+    <view class="itemTopRight">
+      <text class="name {{opacity3}}">{{item.c_name}}</text>
+      <text class="validPeriod {{opacity3}}">{{item.validPeriod}}</text>
+    </view>
+  </view>
+  <view wx:if="{{!canSelect}}" class="itemBottom {{ couponType == 1 ? (item.isShow ? 'arrowUp' : 'arrow') : 'warning'}}" bindtap="bindShowMore"
+    data-show="{{item.isShow}}" data-index="{{index}}">
+    <text class="{{item.isShow ? 'scopeExpand' : 'scope'}}">{{tipLable}}：{{item.storeRange}}</text>
+  </view>
+</view>

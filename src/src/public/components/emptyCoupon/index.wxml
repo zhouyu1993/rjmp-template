@@ -1,0 +1,6 @@
+<view class="empty {{ticketstatus? 'emptytwo' : ''}}" wx-if="{{visible}}">
+  <image wx:if="{{ticketstatus}}" src="https://cmspic-10004025.image.myqcloud.com/568f7c00-af18-11e8-8d37-bd845685c862_size_200x200"
+  />
+  <image wx:else src="https://cmspic-10004025.image.myqcloud.com/b6c58229-46ff-421a-b1ff-d4f79ac21a1e" />
+  <text class="desc {{ticketstatus? 'desc-two' : ''}}">啊哦~目前没有可用的优惠券哦</text>
+</view>

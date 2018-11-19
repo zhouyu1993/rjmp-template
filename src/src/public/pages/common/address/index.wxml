@@ -1,0 +1,31 @@
+<view class="empty" style="display:{{addressList.length<=0 && isLoadData ?'block':'none'}}">
+  <image src="https://cmspic-10004025.image.myqcloud.com/53e839fb-23a2-44b9-a704-52e7d2c051a0" />
+  <text>您还没有收货地址哦，快去添加吧！</text>
+  <view class="button">
+    <button bindtap="bindAddAddress">新增加收货地址</button>
+    <button bindtap="bindAddWCAddress">微信添加</button>
+  </view>
+</view>
+<scroll-view scroll-y class="addressList" style="display:{{addressList.length>0 && !isAdd && !isEdit?'block':'none'}}">
+  <view class="address" wx:for="{{addressList}}" wx:key="{{item.addrid}}" data-id="{{item.addrid}}" bindtap="bindEditAddress">
+    <view class="addressInfo">
+      <text class="addressInfoConcact">
+        <text class="deaf-txt" wx:if="{{item.property==1}}">[默认]</text>{{item.name}}<text class="rz-txt" wx:if="{{isGlobal&&realNameInfo&&realNameInfo.realName==item.name}}">已认证</text>
+      </text>
+      <text class="addressInfoPhone" type="number">{{item.mobile}}</text>
+    </view>
+    <view class="addressInfo">
+      <text class="addressInfoDetail">{{item.listAddress}}</text>
+      <image class="edit" src="https://cmspic-10004025.image.myqcloud.com/572ed4e5-30a9-4c4d-a9f3-69f7c9cc4d2b" />
+    </view>
+  </view>
+  <view class="button">
+    <button bindtap="bindAddAddress">新增加收货地址</button>
+    <button bindtap="bindAddWCAddress">微信添加</button>
+  </view>
+
+
+</scroll-view>
+<view class="toast" wx:if="{{isShowToast}}">
+  <view class="toastContent">{{toastText}}</view>
+</view>

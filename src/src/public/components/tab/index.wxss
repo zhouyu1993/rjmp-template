@@ -1,0 +1,27 @@
+.tab {
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  color: #121212;
+}
+
+.tab view {
+  flex: 1;
+  white-space: nowrap;
+}
+.tab view text {
+  display: inline;
+  white-space: nowrap;
+}
+/*todo:初始化的时候在组件中没有，还没找出原因*/
+.currentTab {
+  display: inline-block;
+  height: 100%;
+  box-sizing: border-box;
+  border-bottom: 4rpx solid #ff397e;
+  color: #ff397e;
+}

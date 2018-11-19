@@ -1,0 +1,5 @@
+<form report-submit bindsubmit="tracker" class="reset-form my-class">
+  <button formType="submit" class="reset-button">
+    <slot></slot>
+  </button>
+</form>

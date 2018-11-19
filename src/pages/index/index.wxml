@@ -1,0 +1,9 @@
+<component-wrap disabled>
+  <view class="container">
+    <view class="hotkeys">
+      <view class="tip">热门搜索</view>
+      <text wx:for="{{hotkeys}}" wx:key="{{key}}" data-keyword="{{item.k}}" class="hotkey {{index == 0 ? 'first-child' : ''}}">{{item.k}}</text>
+    </view>
+    <component-icon-playing />
+  </view>
+</component-wrap>

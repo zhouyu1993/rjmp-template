@@ -1,0 +1,60 @@
+<block wx:if="{{entity}}">
+  <view class="block base">
+    <view class="name">{{store_name}}</view>
+    <view class="info more" bindtap="onNavigateTap">
+      <view class="icon icon-loc"></view>
+      <view class="txt">{{address_street}}</view>
+    </view>
+    <view class="info more" bindtap="onCallTap">
+      <view class="icon icon-tel"></view>
+      <view class="txt txt-blue">{{contact_phone_01}}</view>
+    </view>
+    <block wx:if="{{is_delivery=='1'||is_delivery_inside=='1'}}">
+      <block wx:if="{{carryExpense}}">
+        <view class="info more" bindtap="getExpenseData">
+          <view class="icon icon-car"></view>
+          <view class="txt">门店发货运费明细</view>
+        </view>
+      </block>
+      <block wx:else="{{carryExpense}}">
+        <view class="info">
+          <view class="icon icon-car"></view>
+          <view class="txt">满{{freightThreshold/100}}元免费配送，不足收取{{freight/100}}元运费</view>
+        </view>
+      </block>
+    </block>
+    <view class="info">
+      <view class="icon icon-clock"></view>
+      <view class="txt time">
+        <view class="label">工作日</view>
+        <text>{{start_time}}-{{end_time}}</text>
+        <block wx:if="{{holidays_start_time&&holidays_end_time}}">
+          <view class="label">节假日</view>
+          <text>{{holidays_start_time}}-{{holidays_end_time}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="features">
+      <view wx:if="{{is_fetch&&is_fetch=='1'}}">支持店内扫码购</view>
+      <view wx:if="{{is_delivery_inside&&is_delivery_inside=='1'}}">支持送货上门</view>
+      <view wx:if="{{is_fetch_outside&&is_fetch_outside=='1'}}">支持到店自提</view>
+      <view wx:if="{{is_delivery&&is_delivery=='1'}}">支持门店发货</view>
+      <!-- <view wx:if="{{freight&&freightThreshold}}">{{freightThreshold/100}}元免费配送，不足收取{{freight/100}}元运费</view> -->
+    </view>
+  </view>
+  <view class="block service">
+    <view class="title">门店服务</view>
+    <view class="list">
+      <view wx:for="{{facilitys}}" wx:key="{{item.id}}" class="item">
+        <image mode="aspectFill" src="{{item.image}}?imageView2/1/w/32/h/32/q/80" />
+        <view class="label">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="block pic">
+    <view class="title">门店照片</view>
+    <view class="list">
+      <image wx:for="{{photo}}" data-pics="{{photo}}" data-current="{{item}}" bindtap="onPicTap" mode="aspectFill" wx:key="{{index}}" src="{{item}}?imageView2/1/w/320/h/320/q/80" />
+    </view>
+  </view>
+</block>

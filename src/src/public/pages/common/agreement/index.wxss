@@ -1,0 +1,20 @@
+text {
+  display: block;
+  font-size: 26rpx;
+  line-height: 1.5;
+  margin: 10rpx 20rpx;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.indent {
+  text-indent: 40rpx;
+}
+
+.title {
+  font-size: 32rpx;
+}
+
+.split {
+  margin-top: 20rpx;
+}

@@ -1,5 +1,8 @@
 # https://help.github.com/ignore-files/ for more about ignoring files.
 
+# production
+/dist/
+
 # dependencies
 node_modules
 

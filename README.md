@@ -1,5 +1,7 @@
 # {{name}}
 
+{{description}}
+
 ## src 目录结构
 
 * actions 分页面管理接口请求，同 utils/actions.js
@@ -41,11 +43,13 @@
 ``` bash
 # appId
 
-app_id `wxb82b5f0a6f566730` 测试号
+{{app_id}}
+
+`wxb82b5f0a6f566730` 测试号
 
 # appSecret
 
-app_secret
+{{app_secret}}
 
 # request 合法域名
 
@@ -61,7 +65,7 @@ https://log.aldwx.com # 阿拉丁
 
 # 阿拉丁 app_key
 
-ald_app_key
+{{ald_app_key}}
 ```
 
 # Pages
@@ -149,8 +153,14 @@ ald_app_key
 
 # 注意
 
-本框架试用了一些测试基础配置，在实际试用过程中需要自行修改一些配置，如：
+本框架试用了一些测试基础配置，在实际使用过程中需要自行修改一些配置，如：
 
+* `/src/project.config.json` 里
+  - projectname
+  - app_id
+  - libVersion
+  - setting
+  - etc.
 * `/src/utils/constants.js` 里
   - app_id
   - app_secret 但一般不准露出
@@ -158,9 +168,6 @@ ald_app_key
   - ald_app_key
   - app_id
   - app_secret 但一般不准露出
-* `/src/project.config.json` 里
-  - projectname
-  - app_id
-  - libVersion
-  - setting
-  - etc.
+* `/src/utils/api.js` 里
+  - WXDATA 点击上报，demo 里是假域名
+  - 项目相关域名统一在这里配置

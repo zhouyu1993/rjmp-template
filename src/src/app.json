@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tool/index",
+    "pages/a/index",
+    "pages/b/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ff397e",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "kf-mp2",
+    "backgroundColor": "#eee",
+    "backgroundTextStyle": "dark",
+    "backgroundColorTop": "#eee",
+    "backgroundColorBottom": "#eee",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50,
+    "pageOrientation": "auto"
+  },
+  "tabBar": {
+    "color": "#121212",
+    "selectedColor": "#ff397e",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "音乐库"
+      },
+      {
+        "pagePath": "pages/tool/index",
+        "text": "小工具"
+      }
+    ],
+    "position": "top"
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "debug": false,
+  "functionalPages": false,
+  "subpackages": [],
+  "workers": "",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "plugins": [],
+  "preloadRule": {},
+  "resizable": true,
+  "navigateToMiniProgramAppIdList": []
+}

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<import src="../templates/toast.wxml" />
+<view class="reg-guide">
+  <view class="reg-method">
+    <form bindsubmit="formSubmit" report-submit>
+      <button wx:if="{{showBtn}}" class="btn weixin" formType="submit" open-type="getUserInfo" bindgetuserinfo="onWeixinRegTap">微信登录</button>
+    </form>
+    <!-- <button class="btn phone" bindtap="onPhoneRegTap">手机号验证登录</button> -->
+  </view>
+  <view class="agreement-text">
+    <view class="normal-text">已阅读并同意</view>
+    <view class="highlight-text" bindtap="onTapAgreement">《孩子王服务协议》</view>
+    <view class="normal-text">及</view>
+    <view class="highlight-text" bindtap="onTapPrivacy">《隐私保护政策》</view>
+  </view>
+  <view class="logo">
+    <image class="img" src="https://cmspic-10004025.image.myqcloud.com/75882870-6939-11e8-9625-95277b0262f6_size_328x50" />
+  </view>
+</view>

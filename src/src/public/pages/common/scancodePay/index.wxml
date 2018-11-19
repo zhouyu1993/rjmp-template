@@ -1,0 +1,70 @@
+<!--pages/common/scancodePay/index.wxml-->
+<view class="container">
+    <!-- <image class="barcode" src="{{barcodeURL}}"/> -->
+    <canvas class="barcode " canvas-id="barcode"/>
+    <text class="paycode">{{formatPayCode}}</text>
+    <canvas class="qrcode offscreen" canvas-id="qrcode" />
+    <image class="qrcode" src="{{qrcodeURL}}"/>
+
+    <text class="tip">将付款码出示给收银人员</text>
+    <view class="bottom">
+        <view class="item">
+            <view class="cbox {{status !== '1' ? 'disabled': ''}}" bindtap="checkChange" data-val="02">
+                <image wx:if="{{paymentMode !== '02'}}" class="c-normal" src="../../../assets/c-normal.png"></image>
+                <image wx:else class="c-active" src="../../../assets/c-active.png"></image>
+            </view>
+            <view class="countrow">
+                <text class="txt1">星享融育儿宝</text>
+                <view class="remain">
+                    <text class="txt2">余额：</text>
+                    <text class="count">{{balance}}</text>
+                </view>
+                <text class="minus">{{activityTitle}}</text>
+            </view>
+        </view>
+        <view class="item">
+           <view class="cbox" bindtap="checkChange" data-val="01">
+                <image wx:if="{{paymentMode !== '01'}}" class="c-normal" src="../../../assets/c-normal.png"></image>
+                <image wx:else class="c-active" src="../../../assets/c-active.png"></image>
+            </view>
+            <view class="countrow">
+                <text class="txt1">宝宝钱包余额</text>
+                <view class="remain">
+                    <text class="txt2">余额：</text>
+                    <text class="count">{{accountBalance}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pwdPanel {{openPanel === true ? 'open':''}}" >
+        <view class="input-tip">
+            <text>请输入支付密码</text>
+            <image src="../../../assets/close.png" bindtap="closePanel"/>
+        </view>
+        <view class="input-area">
+            <text wx:for="{{6}}" wx:key="index">{{pwdSet[index] ? '●': ''}}</text>
+        </view>
+        <view class="numbers">
+            <view class="row">
+                <view bindtap="doInput" data-val="1" hover="true" hover-class="hover">1</view>
+                <view bindtap="doInput" data-val="2" hover="true" hover-class="hover">2</view>
+                <view bindtap="doInput" data-val="3" hover="true" hover-class="hover">3</view>
+            </view>
+            <view class="row">
+                <view bindtap="doInput" data-val="4" hover="true" hover-class="hover">4</view>
+                <view bindtap="doInput" data-val="5" hover="true" hover-class="hover">5</view>
+                <view bindtap="doInput" data-val="6" hover="true" hover-class="hover">6</view>
+            </view>
+            <view class="row">
+                <view bindtap="doInput" data-val="7" hover="true" hover-class="hover">7</view>
+                <view bindtap="doInput" data-val="8" hover="true" hover-class="hover">8</view>
+                <view bindtap="doInput" data-val="9" hover="true" hover-class="hover">9</view>
+            </view> 
+            <view class="row">
+                <view></view>
+                <view bindtap="doInput" data-val="0" hover="true" hover-class="hover">0</view>
+                <view bindtap="del" hover="true" hover-class="hover"><image class="del" src="../../../assets/del.png"/></view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,67 @@
+@import '../../assets/scss/mixin';
+
+.mp-modal {
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 2000;
+    width: 750rpx;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  &-core {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2001;
+    width: 500rpx;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8rpx;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &-title {
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+    color: #121212;
+  }
+
+  &-content {
+    padding: 0 20rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    color: #666;
+  }
+
+  &-buttons {
+    @include nativeborder();
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+
+    &-cancel, &-confirm {
+      flex: 1;
+      padding: 20rpx;
+      font-size: 34rpx;
+      text-align: center;
+    }
+
+    &-cancel {
+      @include nativeborder(right);
+      color: #333;
+    }
+
+    &-confirm {
+      color: #ff397e;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+page,
+view,
+scroll-view,
+swiper,
+swipe-item,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkbox-group,
+form,
+input,
+label,
+picker,
+picker-view,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+functional-page-navigator,
+audio,
+image,
+video,
+camera,
+live-player,
+live-pusher,
+map,
+canvas,
+open-data,
+web-view,
+ad, {
+  box-sizing: border-box;
+
+  &::before {
+    box-sizing: border-box;
+  }
+
+  &::after {
+    box-sizing: border-box;
+  }
+
+  &[hidden] {
+    display: none!important;
+  }
+}
+
+page {
+  height: 100%;
+  overflow-y: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 28rpx;
+  line-height: 1.2;
+  color: #121212;
+  text-size-adjust: 100%;
+  word-break: break-all;
+  background-color: #f4f4f4;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  position: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  font-size: 28rpx;
+  line-height: 1.2;
+  color: #121212;
+  text-align: center;
+  background: none;
+  border: 0;
+  border-radius: 0;
+
+  &::after {
+    content: none;
+  }
+}
+
+input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+image {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+open-data {
+  display: block;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+  background-color: transparent;
+}
+
+.lazy-loading {
+  background: url(https://cmspic-10004025.image.myqcloud.com/48428ea0-7ab9-11e8-9f6d-b92c9702d6e7_size_64x64#gif) center no-repeat;
+  background-size: 128rpx 128rpx;
+}
+
+.layout-flex {
+  display: flex;
+
+  &-ac {
+    display: flex;
+    align-items: center;
+  }
+
+  &-acjc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-acjs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

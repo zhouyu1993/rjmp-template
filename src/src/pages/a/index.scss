@@ -1,0 +1,17 @@
+@import '../../assets/scss/mixin';
+
+.container {
+  height: 100%;
+  text-align: center;
+  background-color: #fff;
+
+  button {
+    display: inline-block;
+    padding: 0 20rpx;
+    margin: 20rpx auto;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    color: #fff;
+    background-color: #ff397e;
+  }
+}

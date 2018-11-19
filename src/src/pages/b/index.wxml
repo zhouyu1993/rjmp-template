@@ -1,0 +1,7 @@
+<component-wrap disabled>
+  <view class="container">
+    <view>aNum: {{pageA.aNum}}</view>
+    <view>bNum: {{pageB.bNum}}</view>
+    <button bindtap="increase">修改aNum</button>
+  </view>
+</component-wrap>

@@ -1,0 +1,10 @@
+<view class="container">
+  <view>微商城小程序公共页面入口</view>
+  <view class="button" bindtap="bindLogin">会员登录</view>
+  <view class="button" bindtap="bindCard">我的会员卡</view>
+   <view class="button" bindtap="bindSelectAddress">地址选择</view>
+  <view class="button" bindtap="bindSelectCity">城市选择（{{city}}）</view>
+  <view class="button" bindtap="bindCoupon">我的优惠券</view>
+  <view class="button" bindtap="bindSelectCoupon">选择优惠券</view>
+  <view class="button" bindtap="bindRegister">注册</view>
+</view>

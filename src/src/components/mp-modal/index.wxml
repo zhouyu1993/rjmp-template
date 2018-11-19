@@ -1,0 +1,31 @@
+<view wx:if="{{visible}}" hidden="{{hidden}}" class="mp-modal my-class">
+  <view class="mp-modal-mask"></view>
+  <view class="mp-modal-core">
+    <view class="mp-modal-title">{{title || '提示'}}</view>
+    <view class="mp-modal-content">{{content || '这是一个模态弹窗'}}</view>
+    <view class="mp-modal-buttons">
+      <block wx:if="{{cancelOpenType}}">
+        <block wx:if="{{cancelOpenType === 'getUserInfo'}}">
+          <button hover-class="none" lang="{{lang || 'en'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="mp-modal-buttons-cancel" style="color: {{cancelColor}}">{{cancelText || '登录'}}</button>
+        </block>
+        <block wx:else>
+          <slot></slot>
+        </block>
+      </block>
+      <block wx:else>
+        <button hover-class="none" bindtap="cancel" class="mp-modal-buttons-cancel" style="color: {{cancelColor}}">{{cancelText || '取消'}}</button>
+      </block>
+      <block wx:if="{{confirmOpenType}}">
+        <block wx:if="{{confirmOpenType === 'getUserInfo'}}">
+          <button hover-class="none" lang="{{lang || 'en'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="mp-modal-buttons-confirm" style="color: {{confirmColor}}">{{confirmText || '登录'}}</button>
+        </block>
+        <block wx:else>
+          <slot></slot>
+        </block>
+      </block>
+      <block wx:else>
+        <button hover-class="none" bindtap="confirm" class="mp-modal-buttons-confirm" style="color: {{confirmColor}}">{{confirmText || '确定'}}</button>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,7 +1,7 @@
 {
   "projectname": "{{name}}",
   "description": "项目配置文件。",
-  "appid": "{{appId}}",
+  "appid": "{{app_id}}",
   "miniprogramRoot": "./",
   "compileType": "miniprogram",
   "libVersion": "2.4.0",

@@ -1,0 +1,131 @@
+page {
+  height: 100%;
+  background: #efeff4;
+}
+
+.coupon {
+  width: 100%;
+  margin-top: 1rpx;
+}
+
+/*todo:初始化的时候在组件中没有，还没找出原因*/
+
+.currentTab {
+  display: inline-block;
+  height: 100%;
+  box-sizing: border-box;
+  border-bottom: 4rpx solid #ff397e;
+  color: #ff397e;
+}
+
+.list {
+  margin-top: 10rpx;
+  padding-bottom: 110rpx;
+}
+
+.scope {
+  display: block;
+  padding-top: 20rpx;
+  margin-left: 30rpx;
+  width: 600rpx;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.scopeExpand {
+  display: block;
+  padding-top: 20rpx;
+  margin-left: 30rpx;
+  width: 600rpx;
+  text-align: left;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+}
+
+.dialog .tip {
+  margin: 12rpx 30rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.dialog .content {
+  position: relative;
+  width: 560rpx;
+  height: 782rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.dialog .content .title {
+  display: block;
+  margin: 40rpx auto 20rpx;
+  font-size: 36rpx;
+  color: #121212;
+  text-align: center;
+}
+
+.dialog .content .desc {
+  width: 500rpx;
+  height: 560rpx;
+  overflow: auto;
+  margin: 30rpx;
+  white-space: pre-wrap;
+  font-size: 30rpx;
+  color: #121212;
+}
+
+.dialog .content .button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 88rpx;
+  border-top: 1rpx solid #E7E7E7;
+  border-radius: 0 0 8rpx 8rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #FF397E;
+  background: #fff;
+}
+
+.confirmSelectCoupon {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #FF6EA2;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  text-align: center;
+}
+.stride-tip{
+  height: 70rpx;
+  line-height: 70rpx;
+  background:#fee7a0;
+  color:#9a7126;
+  font-size: 24rpx;
+}
+.stride-tip text{
+  padding-left: 20rpx;
+}

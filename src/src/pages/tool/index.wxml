@@ -1,0 +1,54 @@
+<component-wrap disabled>
+  <view class="container">
+    <block wx:if="{{systemInfo.SDKVersion}}">
+      <view class="module-title">系统检测</view>
+      <view class="systemInfo">
+        <view class="brand">手机品牌:<text>{{systemInfo.brand}}</text></view>
+        <view class="model">手机品牌:<text>{{systemInfo.model}}</text></view>
+        <view class="pixelRatio">手机像素比:<text>{{systemInfo.pixelRatio}}</text></view>
+        <view class="system">手机操作系统版本:<text>{{systemInfo.system}}</text></view>
+        <view class="windowWidth">页面可视宽度:<text>{{systemInfo.windowWidth}}</text></view>
+        <view class="windowHeight">页面可视高度:<text>{{systemInfo.windowHeight}}</text></view>
+        <view class="windowWidth">屏幕宽度:<text>{{systemInfo.screenWidth}}</text></view>
+        <view class="windowHeight">屏幕高度:<text>{{systemInfo.screenHeight}}</text></view>
+        <view class="windowHeight">状态栏高度:<text>{{systemInfo.statusBarHeight}}</text></view>
+        <view class="version">微信版本号:<text>{{systemInfo.version}}</text></view>
+        <view class="SDKVersion">小程序基础库版本号:<text>{{systemInfo.SDKVersion}}</text></view>
+      </view>
+    </block>
+    <block wx:if="{{userInfo.nickName}}">
+      <view class="userInfo">
+        <view class="avatar"><image src="{{userInfo.avatarUrl}}" /></view>
+        <view class="nickName">名字:<text>{{userInfo.nickName}}</text></view>
+        <view class="gender">性别:<text wx:if="{{userInfo.gender == 1}}">男</text><text wx:elif="{{userInfo.gender == 2}}">女</text><text wx:else>人妖</text></view>
+        <view class="location">位置:<text>{{userInfo.country}} {{userInfo.province}} {{userInfo.city}}</text></view>
+      </view>
+    </block>
+    <block wx:if="{{address.userName}}">
+      <view class="address">
+        <view class="userName">收货人姓名:<text>{{address.userName}}</text></view>
+        <view class="address-mainInfo">收货地址:<text>{{address.provinceName}} {{address.cityName}} {{address.countyName}}</text></view>
+        <view class="address-detailInfo">详细地址:<text>{{address.detailInfo}}</text></view>
+        <view class="postalCode">邮编:<text>{{address.postalCode}}</text></view>
+        <view class="telNumber">收货人手机号码:<text>{{address.telNumber}}</text></view>
+      </view>
+    </block>
+    <view class="menu">
+      <button hover-class="none" open-type="openSetting" class="openSetting">授权</button>
+      <button hover-class="none" lang="{{systemInfo.language || 'en'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="getUserInfo">登录</button>
+      <button hover-class="none" bindtap="chooseAddress" class="chooseAddress">选择地址</button>
+      <button hover-class="none" bindtap="clearStorage" class="clearStorage">清理缓存</button>
+    </view>
+    <component-mp-modal
+      visible="{{modal.visible}}"
+      title="{{modal.title}}"
+      content="{{modal.content}}"
+      cancelColor="{{modal.cancelColor}}"
+      cancelText="{{modal.cancelText}}"
+      confirmOpenType="{{modal.confirmOpenType}}"
+      bindcancel="modalCancel"
+      bindgetUserInfo="getUserInfo"
+    >
+    </component-mp-modal>
+  </view>
+</component-wrap>

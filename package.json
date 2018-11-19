@@ -7,10 +7,10 @@
     "wx-miniapp"
   ],
   "author": "{{author}}",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "git+ssh://"
+    "url": "git+ssh://git@github.com:{{author}}/{{name}}.git"
   },
   "bugs": {
     "url": "",
@@ -36,6 +36,6 @@
     "last 3 versions",
     "ie >= 9",
     "ios >= 8",
-    "android >= 4.2"
+    "android >= 4.4"
   ]
 }

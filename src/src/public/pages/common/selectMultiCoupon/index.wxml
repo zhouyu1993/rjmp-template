@@ -1,0 +1,44 @@
+<view class="coupon" wx:if="{{isSuccess}}">
+  <tab tabs="{{tabs}}" bindtabchange="bindTabChange" />
+  <view class="list" wx:if="{{tabIndex == 0}}">
+    <block wx:if="{{availableCoupons.godmodCoupons.length>0}}">
+      <view class="coupon-hr">无敌券仅可使用一张</view>
+      <coupon data="{{availableCoupons.godmodCoupons}}" canSelect="{{true}}" isSingle="{{true}}" bindsetselectedcoupon="setSelectedGodCoupons"
+      />
+    </block>
+    <block wx:if="{{availableCoupons.normalCoupons.length>0}}">
+      <view class="coupon-hr">品牌券可以叠加使用</view>
+      <coupon data="{{availableCoupons.normalCoupons}}" canSelect="{{true}}" isSingle="{{true}}" bindsetselectedcoupon="setSelectedNormalCoupons"
+      />
+    </block>
+    <block wx:if="{{availableCoupons.freightCoupons.length>0}}">
+      <view class="coupon-hr">运费券仅可使用一张</view>
+      <coupon data="{{availableCoupons.freightCoupons}}" canSelect="{{true}}" isSingle="{{true}}" bindsetselectedcoupon="setSelectedFreightCoupons"
+      />
+    </block>
+  </view>
+  <view class="list" wx:if="{{tabIndex == 1}}">
+
+    <block wx:if="{{unavailableCoupons.godmodCoupons.length>0}}">
+      <view class="coupon-hr">无敌券仅可使用一张</view>
+      <coupon data="{{unavailableCoupons.godmodCoupons}}" canSelect="{{false}}" isSingle="{{true}}" />
+    </block>
+    <block wx:if="{{unavailableCoupons.normalCoupons.length>0}}">
+      <view class="coupon-hr">品牌券可以叠加使用</view>
+      <coupon data="{{unavailableCoupons.normalCoupons}}" canSelect="{{false}}" isSingle="{{true}}" />
+    </block>
+    <block wx:if="{{unavailableCoupons.freightCoupons.length>0}}">
+      <view class="coupon-hr">运费券仅可使用一张</view>
+      <coupon data="{{unavailableCoupons.freightCoupons}}" canSelect="{{false}}" isSingle="{{true}}" />
+    </block>
+  </view>
+  <empty visible="{{(!hasAvailableCoupon&&tabIndex==0) ||(!hasUnAvailableCoupon&&tabIndex==1)}}" />
+</view>
+<view class="dialog" wx:if="{{isShowDetail}}">
+  <view class="content">
+    <text class="title">{{currentDetail.text}}</text>
+    <view class="desc">{{currentDetail.desc}}</view>
+    <view class="button" bindtap="bindHideDetail">我知道了</view>
+  </view>
+</view>
+<view wx:if="{{tabIndex == 0 && hasAvailableCoupon}}" class="confirmSelectCoupon" bindtap="bindConfirmSelectedCoupon">确认</view>

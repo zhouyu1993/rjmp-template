@@ -1,0 +1,62 @@
+<canvas canvas-id="city" class="city-selector">
+</canvas>
+<view class="shop-list">
+  <!-- <view class="title">
+    <view class="label">当前城市</view>
+    <navigator url="../city/index" class="selector">
+      <text>{{city.name}}</text>
+    </navigator>
+  </view> -->
+  <map id="map" class="map" wx:if="{{storeList}}" include-points="{{points}}" markers="{{markers}}" bindmarkertap="onMarkerTap"
+    bindcallouttap="onCalloutTap" show-location="true" longitude="{{location.longitude}}" latitude="{{location.latitude}}"
+    controls="{{mapControls}}" bindcontroltap="onControlTap" bindregionchange="onMapRegionChange">
+    <!-- <cover-view class="selector" bindtap="onCitySelectorTap">{{city.name}}</cover-view> -->
+  </map>
+  <view wx:if="{{activeStore}}" class="single-store">
+    <view bindtouchstart="onActiveStoreTouchStart" bindtouchend="onActiveStoreTouchEnd" bindtouchmove="onActiveStoreTouchMove">
+      <view class="touchbar"></view>
+      <template is="store" data="{{...activeStore}}" />
+    </view>
+  </view>
+  <scroll-view wx:if="{{storeList&&storeList.length&&!activeStore}}" class="list {{storeList.length>1?'multi':''}}" scroll-into-view="{{focusStore}}"
+    scroll-y scroll-with-animation>
+    <template is="store" wx:for="{{storeList}}" wx:key="store_code" wx:for-index="index" wx:for-item="store" data="{{...store,select,location}}"
+    />
+
+  </scroll-view>
+  <!-- <view class="empty" wx:elif="{{storeList}}">
+    <image class="icon" src="https://cmspic-10004025.image.myqcloud.com/4b582ba7-7cc0-46db-8109-fc1175a7a5e8" />
+    <text>您搜索的区域还未有门店入驻～</text>
+    <navigator url="../city/index" class="btn">切换城市</navigator>
+  </view> -->
+</view>
+<template name="store">
+  <view id="store_{{entity}}" class="store {{select?'more':''}}">
+    <view bindtap="onStoreTap" data-store-id="{{entity}}">
+      <view class="feature">
+        <view class="pic">
+          <image lazy-load="{{true}}" mode="scaleToFill" src="{{photo}}?imageView2/1/w/400/h/300/q/80" />
+        </view>
+        <view class="info">
+          <view class="hd">
+            <view>{{store_name}}</view>
+            <view wx:if="{{location}}">{{distance}}KM </view>
+          </view>
+          <view class="addr">{{address_street}}</view>
+          <view class="phone">{{contact_phone_01}}</view>
+        </view>
+      </view>
+      <view class="svr">
+        <view class="item" wx:for="{{facilitys}}" wx:key="{{item.id}}">
+          <image mode="aspectFill" src="{{item.image}}?imageView2/1/w/32/h/32/q/80" />
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="tool">
+      <view class="btn call" data-store-id="{{entity}}" bindtap="onCallTap">电话</view>
+      <view class="btn navigate" data-store-id="{{entity}}" bindtap="onNavigateTap">导航</view>
+      <navigator class="btn detail" data-store-id="{{entity}}" bindtap="onStoreDetailTap" url="../shop-detail/index?entityid={{entity}}">详情</navigator>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<import src="../templates/toast.wxml" />
+<view class="reg-guide" wx:if="{{weixinReg}}">
+  <view class="reg-method">
+    <form bindsubmit="formSubmit" report-submit>
+      <button class="btn weixin" open-type="getPhoneNumber" formType="submit" bindgetphonenumber="onWeixinRegTap" wx:if="{{checkAgreement}}">微信一键登录</button>
+      <button class="btn weixin" bindtap="onTapFakeButton" wx:else>微信一键登录</button>
+    </form>
+    <button class="btn phone" bindtap="onPhoneRegTap" wx:if="{{checkAgreement}}">手机号验证登录</button>
+    <button class="btn phone" bindtap="onTapFakeButton" wx:else>手机号验证登录</button>
+    <view class="agreement">
+      <view class="checkbox {{checkAgreement ? 'checked' : ''}}" bindtap="onCheckAgreement"></view>
+      <view class="normal-text">已阅读并同意</view>
+      <view class="link" bindtap="onTapAgreement">《孩子王服务协议》</view>
+      <view class="normal-text">及</view>
+      <view class="link" bindtap="onTapPrivacy">《隐私保护政策》</view>
+    </view>
+  </view>
+</view>
+<view class="container" wx:else>
+  <text class="header">绑定手机号</text>
+  <view class="field">
+    <input id="mobile" bindinput="bindMobileInput" value="{{mobile}}" type="number" maxlength="11" placeholder="请输入您的手机号" />
+    <icon id="mobile" wx-if="{{mobile != ''}}" class="clear" type="clear" size="15" bindtap="bindClearTap" />
+  </view>
+  <view class="field">
+    <input id="pictCode" value="{{pictCode}}" bindinput="bindInput" type="number" maxlength="10" placeholder="请输入图形验证码" />
+    <icon id="pictCode" wx-if="{{pictCode != ''}}" class="clear" type="clear" size="15" bindtap="bindClearTap" />
+    <image src="{{pictCodeUrl}}" bindtap="bindPictCodeTap" style="width: 160rpx; height: 60rpx;"></image>
+  </view>
+  <view class="field">
+    <input id="verifyCode" value="{{verifyCode}}" bindinput="bindInput" type="number" maxlength="6" placeholder="请输入短信验证码" />
+    <icon id="verifyCode" wx-if="{{verifyCode != ''}}" class="clear" type="clear" size="15" bindtap="bindClearTap" />
+    <button loading="{{codeFetching}}" bindtap="bindSendCodeTap" class="codeButton" disabled="{{mobile == '' || countdown > 0}}">
+      {{ codeFetching ? '' : (countdown
+      < 0 ? '获取验证码': (countdown> 0 ? countdown + '秒后重发' : '再次获取')) }}
+    </button>
+  </view>
+  <view class="agreement mobile-page">
+    <view class="normal-text">已阅读并同意</view>
+    <view class="link" bindtap="onTapAgreement">《孩子王服务协议》</view>
+    <view class="normal-text">及</view>
+    <view class="link" bindtap="onTapPrivacy">《隐私保护政策》</view>
+  </view>
+  <form bindsubmit="formSubmit" report-submit>
+    <button bindtap="bindSubmitTap" formType="submit" disabled="{{mobile == '' || verifyCode == ''}}" class="button">
+        绑定
+    </button>
+  </form>
+  
+  <template is="toast" data="{{toast}}" />
+</view>
