@@ -19,7 +19,10 @@ var distDir = ''
 var npmPath = ''
 
 var babelrc = fs.readFileSync('./.babelrc', 'utf-8')
-var babelLoaderOptions = JSON.parse(babelrc)
+var babelLoaderOptions = {
+  ...JSON.parse(babelrc),
+  babelrc: false,
+}
 
 // 缓存
 var buildCache = {}
